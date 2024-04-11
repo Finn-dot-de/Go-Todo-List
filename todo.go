@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 	"strings"
 	"todo/assets/utils"
 )
@@ -45,6 +46,11 @@ func menue(auswahl string, uebergabe string) {
 	case "add":
 		utils.AddEntry(uebergabe)
 	case "del":
+		i, err := strconv.Atoi(uebergabe)
+		if err != nil {
+			panic(err)
+		}
+		utils.Delete(i)
 	case "done":
 	default:
 		switch auswahl {

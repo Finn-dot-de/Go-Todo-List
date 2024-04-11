@@ -45,7 +45,7 @@ func AddEntry(todo string) {
 
 	// Zurück zum Anfang der Datei springen und Inhalt löschen
 	if err := file.Truncate(0); err != nil {
-		fmt.Println("Fehler beim Zurücksetzen des Dateiinhalts:", err)
+		fmt.Println("Fehler beim Zurücksetzen des Speichers:", err)
 		return
 	}
 
