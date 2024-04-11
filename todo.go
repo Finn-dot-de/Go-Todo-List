@@ -52,6 +52,11 @@ func menue(auswahl string, uebergabe string) {
 		}
 		utils.Delete(i)
 	case "done":
+		i, err := strconv.Atoi(uebergabe)
+		if err != nil {
+			panic(err)
+		}
+		utils.Done(i)
 	default:
 		switch auswahl {
 		case "list":

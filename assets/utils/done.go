@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"slices"
+	"time"
 	"todo/assets/structs"
 )
 
@@ -24,8 +24,8 @@ func Done(index int) {
 	}
 	index--
 
-	// Entferne den Eintrag im Slice
-	slice = slices.Delete(slice, index, index+1)
+	// Ändere den Wert "Done" im Slice
+	slice[index].Done = time.Now().Format("2006-01-02")
 
 	// Setze den Dateizeiger zurück und lösche den aktuellen Inhalt der Datei
 	err = file.Truncate(0)
@@ -45,5 +45,5 @@ func Done(index int) {
 		panic(err)
 	}
 
-	fmt.Println("Eintrag wurde erfolgreich gelöscht.")
+	fmt.Println("Eintrag wurde erfolgreich aktualisiert.")
 }
