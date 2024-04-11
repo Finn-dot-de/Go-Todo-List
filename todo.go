@@ -32,7 +32,6 @@ func main() {
 
 		uebergabe = strings.Join(os.Args[2:], " ")
 
-		fmt.Printf("Übergabe: %v", uebergabe)
 		menue(auswahl_command, uebergabe)
 
 	} else {
