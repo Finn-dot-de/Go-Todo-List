@@ -59,12 +59,21 @@ func menue(auswahl string, uebergabe string) {
 	default:
 		switch auswahl {
 		case "list":
-			tasks, err := utils.ReadJsonFile()
-			if err != nil {
-				log.Fatal(err)
+			if uebergabe == "asccii" {
+				tasks, err := utils.ReadJsonFileAscii()
+				if err != nil {
+					log.Fatal(err)
+				}
+				// Ausgabe der gelesenen Aufgabenliste
+				utils.PrintTasksAscii(tasks)
+			} else {
+				tasks, err := utils.ReadJsonFile()
+				if err != nil {
+					log.Fatal(err)
+				}
+				// Ausgabe der gelesenen Aufgabenliste
+				utils.PrintTasks(tasks)
 			}
-			// Ausgabe der gelesenen Aufgabenliste
-			utils.PrintTasks(tasks)
 		case "help":
 			fmt.Println(helpComment)
 		default:

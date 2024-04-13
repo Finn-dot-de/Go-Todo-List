@@ -42,7 +42,7 @@ func AddEntry(todo string) {
 
 	// Zurück zum Anfang der Datei springen, um die neuen Daten zu schreiben
 	if _, err := file.Seek(0, 0); err != nil {
-		fmt.Println("Fehler beim Zurücksetzen des Dateizeigers:", err)
+		fmt.Println("Fehler beim Zurücksetzen des Speicherzeigers:", err)
 		return
 	}
 

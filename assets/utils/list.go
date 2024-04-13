@@ -43,6 +43,6 @@ func PrintTasks(tasks []structs.TodoList) {
 			Check = "[X]"
 		}
 		// Aufgabe formatiert ausgeben
-		fmt.Printf("| %d | %3s | %10s | %10s | %8s |\n", i+1, Check, aufgabe.Created, aufgabe.Done, aufgabe.Desc)
+		fmt.Printf("| %d | %3s | %10s | %10s | %-8s |\n", i+1, Check, aufgabe.Created, aufgabe.Done, aufgabe.Desc)
 	}
 }
