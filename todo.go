@@ -18,7 +18,7 @@ Use "todo help" for more information about a command.`
 todo del  <number>       delete task
 todo done <number>       finish task
 todo help                print help
-todo list                list help`
+todo list                print list`
 )
 
 var uebergabe string = ""
