@@ -59,7 +59,7 @@ func menue(auswahl string, uebergabe string) {
 	default:
 		switch auswahl {
 		case "list":
-			if uebergabe == "asccii" {
+			if uebergabe == "ascii" {
 				tasks, err := utils.ReadJsonFileAscii()
 				if err != nil {
 					log.Fatal(err)
